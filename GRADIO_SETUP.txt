@@ -1,0 +1,21 @@
+GRADIO COMPANION INTERFACE
+===========================
+
+This Gradio interface imports the existing functions from database.py.
+It uses the same student_assessment_tracker.db file as Streamlit.
+
+1. Keep gradio_app.py in the same folder as database.py.
+2. Open a NEW VS Code terminal (leave Streamlit running in its current terminal).
+3. Run:
+       python gradio_app.py
+4. Open:
+       http://127.0.0.1:7860
+
+Run Streamlit separately in the other terminal:
+       python -m streamlit run streamlit_app.py
+
+Both interfaces connect to the same SQLite database. Changes made in one
+interface will appear in the other after refreshing its data.
+
+This initial Gradio companion includes login, dashboard statistics, task
+listing, add/update/delete task actions, and a completed-task view.

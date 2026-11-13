@@ -65,7 +65,7 @@ def card(parent, title, value, accent=MAROON):
     tk.Frame(frame, bg=accent, width=5).pack(side="left", fill="y")
     inner = tk.Frame(frame, bg=WHITE, padx=16, pady=13)
     inner.pack(side="left", fill="both", expand=True)
-    tk.Label(inner, text=title.upper(), bg=WHITE, fg=MUTED, font=("Segoe UI", 9, "bold")).pack(anchor="w")
+    tk.Label(inner, text=title.upper(), bg=WHITE, fg=MUTED, font=("Segoe UI", 10, "bold")).pack(anchor="w")
     tk.Label(inner, text=str(value), bg=WHITE, fg=MAROON_DARK, font=("Segoe UI", 23, "bold")).pack(anchor="w", pady=(4, 0))
     return frame
 

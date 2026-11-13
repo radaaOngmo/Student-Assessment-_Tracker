@@ -128,14 +128,14 @@ def update_profile(user_id, full_name, profile_picture=None):
             result = conn.execute("UPDATE users SET full_name=?, profile_picture=? WHERE user_id=?",
                                   (full_name, profile_picture, user_id))
         if result.rowcount == 0:
-            raise ValueError("The account could not be found.")
+            raise ValueError("Account not found.")
         row = conn.execute("SELECT * FROM users WHERE user_id=?", (user_id,)).fetchone()
         return dict(row)
 
 
 def change_password(user_id, current_password, new_password):
     if len(new_password) < 8:
-        raise ValueError("Your new password must contain at least 8 characters.")
+        raise ValueError("Your new password should contain at least 8 characters.")
     with connect() as conn:
         row = conn.execute("SELECT password_salt,password_hash FROM users WHERE user_id=?", (user_id,)).fetchone()
         if not row or not verify_password(current_password, row["password_salt"], row["password_hash"]):

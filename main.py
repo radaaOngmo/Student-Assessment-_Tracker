@@ -1,4 +1,6 @@
 """Application entry point for the Student Assessment Tracker."""
+
+
 import tkinter as tk
 from database import initialize_database
 from interfaces.login import LoginView
@@ -10,6 +12,7 @@ def main():
     configure_theme(root)
     LoginView(root)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()
